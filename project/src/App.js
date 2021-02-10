@@ -38,7 +38,7 @@ class App extends React.Component {
   return (
     <div>
     <StyledApp>
-      <h1>Who is this Git?</h1>
+      <h1>Who's That Git?</h1>
       <form onSubmit={this.formSubmit}>
         <input onChange={this.formChange} placeholder='enter a github username' type='text' name='searchbar' value={this.state.search}/>
         <button>Find Git</button>
