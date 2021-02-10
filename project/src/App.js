@@ -1,8 +1,18 @@
 import axios from 'axios';
 import React from 'react'
 import './App.css';
-// import axios from 'axios';
+import styled from 'styled-components'
 import Card from './Card'
+
+const StyledApp = styled.div`
+width: 100%;
+height: auto;
+display: flex;
+flex-flow: column nowrap;
+justify-content: center;
+align-items: center;
+// border: 5px solid red;
+`
 
 class App extends React.Component {
   state = {github: {}, followers: [], search: ''}
@@ -26,13 +36,15 @@ class App extends React.Component {
   }
   render(){
   return (
-    <div className="App">
+    <div>
+    <StyledApp>
       <h1>Who is this Git?</h1>
       <form onSubmit={this.formSubmit}>
         <input onChange={this.formChange} placeholder='enter a github username' type='text' name='searchbar' value={this.state.search}/>
         <button>Find Git</button>
       </form>
       <Card github={this.state.github} followers={this.state.followers}/>
+    </StyledApp>
     </div>
   );
 }
